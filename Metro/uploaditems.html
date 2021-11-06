@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign In</title>
+  <title>Upload Item</title>
   <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="./css/signin.css">
 </head>
@@ -14,20 +14,28 @@
   <div class="row">
     <div class="col-md-12">
       <form id="myForm">
-        <h1> Sign In </h1>
+        <h1> Upload Item </h1>
         <fieldset>
 
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
+          <label for="email">Name:</label>
+          <input type="text" id="Name" name="Name" required>
 
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required>
+          <label for="password">Id:</label>
+          <input type="text" id="Id" name="Id" required>
+          
+          <label for="password">Description:</label>
+          <input type="text" id="Description" name="Description" required>
+
+          <label for="password">Price:</label>
+          <input class="nomargin" type="text" id="Price" name="Price" required>
 
         </fieldset>
 
-        <div>Don't have an account? Sign Up <a href="./signup.html">Here</a></div>
+          <input type="file" id="myFile" name="filename">
+          <br>
+          <br>
 
-        <button type="submit">Sign In</button>
+        <button class="submitbutton" type="submit">Submit</button>
 
       </form>
     </div>

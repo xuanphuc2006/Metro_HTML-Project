@@ -8,7 +8,9 @@ body {
   font-family: 'Nunito', sans-serif;
   color: #384047;
 }
-
+.nomargin{
+  margin-bottom: 0!important;
+}
 form {
   max-width: 300px;
   margin: 10px auto;
@@ -59,7 +61,7 @@ select {
   border-radius: 2px;
 }
 
-button {
+.submitbutton {
   padding: 19px 39px 18px 39px;
   color: #FFF;
   background-color: #4bc970;
