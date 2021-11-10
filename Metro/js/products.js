@@ -35,7 +35,7 @@ const List = document.getElementById("cart-items")
 for(let cart of Product){
   let Product = await getProduct(db)
   const newHtml = `<span class="cart-item1 cart-header1 cart-column1">${cart.name}</span>
-  <span class="cart-item1 cart-header1 cart-column1">${cart.price}</span>
+  <span class="cart-item1 cart-header1 cart-column1">${cart.price}$</span>
   <span class="cart-quantity1 cart-header1 cart-column1"><i class=" optionsicon fa-lg fas fa-edit"></i><i class=" optionsicon fa-lg fas fa-trash-alt"></i></span>`
 List.innerHTML += newHtml
 }

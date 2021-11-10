@@ -30,4 +30,31 @@ async function addProduct(db, product) {
 async function updateProduct(db, document, newValue) {
   await setDoc(doc(db, 'products', document.id), newValue);
 }
+const form = document.getElementById("myForm")
 
+function displaySuccessMessage(title) {
+  Swal.fire({
+    title,
+    icon: 'success',
+    showConfirmButton: false
+  })
+}
+
+async function handleSubmitForm(e) {
+  e.preventDefault()
+
+  const name = form['Name'].value
+
+  const price = form['Price'].value
+
+  const itemShop =
+  {
+    name: name,
+    price: price
+  }
+
+  await addProduct(db, itemShop)
+  displaySuccessMessage("Upload item successfully!")
+  window.location.href = './index.html'
+}
+form.onsubmit = await handleSubmitForm
