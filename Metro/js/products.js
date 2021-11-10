@@ -13,14 +13,12 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
-async function getUser(db) {
+async function getProduct(db) {
   const usersCol = collection(db, 'products'); // Lấy thông tin của collection users
   const userSnapshot = await getDocs(usersCol); // Lấy document của collection users
   const userList = userSnapshot.docs.map(doc => doc.data()); // 
   return userList;
 }
-
-// Hàm thêm user vào Firestore (users collection)
 async function addProduct(db, product) {
   try {
     const docRef = await addDoc(collection(db, "products"), product);
@@ -29,7 +27,21 @@ async function addProduct(db, product) {
     console.error("Error adding document: ", e);
   }
 }
-
 async function updateProduct(db, document, newValue) {
   await setDoc(doc(db, 'products', document.id), newValue);
 }
+
+const List = document.getElementById("cart-items")
+for(let cart of Product){
+  let Product = await getProduct(db)
+  const newHtml = `<span class="cart-item1 cart-header1 cart-column1">${cart.name}</span>
+  <span class="cart-item1 cart-header1 cart-column1">${cart.price}</span>
+  <span class="cart-quantity1 cart-header1 cart-column1"><i class=" optionsicon fa-lg fas fa-edit"></i><i class=" optionsicon fa-lg fas fa-trash-alt"></i></span>`
+List.innerHTML += newHtml
+}
+
+{/* <div class="cart-row">
+  <span class="cart-item cart-header cart-column">${Product.name}</span>
+  <span class="cart-item cart-header cart-column">${Product.price}</span>
+  <span class="cart-quantity cart-header cart-column">OPTIONS</span>
+</div> */}
