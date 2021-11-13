@@ -115,7 +115,7 @@ https://templatemo.com/tm-559-zay-shop
             <strong class="cart-total-title">Total</strong>
             <span id="cart-total-price"></span>
         </div>
-        <button onclick="deleteItem()" class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+        <button onclick="import('./js/checkout.js').then(o => o.uploadCart())" id="purchas-btn" class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
     </section>
 
 
@@ -218,7 +218,7 @@ https://templatemo.com/tm-559-zay-shop
     <script src="assets/js/templatemo.js"></script>
     <script src="assets/js/custom.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.9/dist/sweetalert2.all.min.js"></script>
-    <script src="./js/checkout.js"></script>
+    <script type="module" src="./js/checkout.js"></script>
     <!-- End Script -->
 </body>
 
