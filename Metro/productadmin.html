@@ -23,14 +23,136 @@ TemplateMo 559 Zay Shop
 https://templatemo.com/tm-559-zay-shop
 
 -->
+<style>
+  body {
+    font-family: "Lato", sans-serif;
+  }
+  #sidebar {
+    display: none;
+    z-index: 2;
+    width: 40%;
+    min-width: 300px;
+    height: 100%;
+    background-color: #fff;
+    position: fixed !important;
+    overflow: auto;
+  }
+
+  .top {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+  }
+  .menu {
+    color: #000 !important;
+    background-color: #fff !important;
+    font-size: 24px !important;
+    max-width: 1200px;
+    margin: 0;
+  }
+  .navbar {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+    padding-left: 16px;
+    padding-right: 16px;
+    user-select: none;
+    border: none;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .main {
+    background: white;
+    margin-left: 300px;
+    font-size: 28px;
+    padding: 0px 10px;
+  }
+  navbar:hover {
+    color: #000 !important;
+    background-color: #ccc !important;
+  }
+  .navbutton {
+    padding: 8px 0px 8px 5px;
+    float: left;
+    border: none;
+    display: hidden;
+    outline: 0;
+    width: 100%;
+    text-align: left;
+    white-space: normal;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    cursor: pointer;
+  }
+  .navbutton:hover {
+    color: #000 !important;
+    background-color: #ccc !important;
+  }
+  .navcontent {
+    position: fixed !important;
+    animation: animateleft 0.4s;
+    font-size: 24px !important;
+    z-index: 2;
+    top: 0;
+    text-align: left;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+    width: 15%;
+    display: none;
+    border: none;
+    white-space: normal;
+    float: left;
+    outline: 0;
+    background-color: #fff;
+    overflow: auto;
+    min-width: 300px;
+    height: 100%;
+    left: 0;
+  }
+
+  @keyframes animateleft {
+    from {
+      left: -300px;
+      opacity: 0;
+    }
+    to {
+      left: 0;
+      opacity: 1;
+    }
+  }
+  .travelblog {
+    text-align: center !important;
+    margin:0px;
+  }
+</style>
 </head>
 
 <body>
-    
+
+  <nav class="navcontent" id="mySidebar">
+    <a href="" onclick="pclose()" class="navbutton">Close Menu</a>
+    <a href="./productadmin.html" onclick="pclose()" class="navbutton">Manage Item</a>
+    <a href="./salesadmin.html" onclick="pclose()" class="navbutton">Sales</a>
+  </nav>
+  <!-- Top -->
+  <div class="top">
+    <div class="menu">
+      <div class="navbar" onclick="popen()">☰</div>
+    </div>
+  </div>
     <!-- idk  -->
+    <div style="padding-top: 150px;"></div>
 
     <div style="padding-top: 150px;"></div>
-    <section style=" width: 100%; text-align:center; " class="container content-section">
+    <section style=" width: 100%; text-align:center; " class=" main container content-section">
         <h2 style=" width: 100%; text-align:center; " class="section-header">PRODUCTS </h2>
         <div class="cart-row">
             <span class="cart-item cart-header cart-column">ITEM NAME</span>
@@ -52,5 +174,15 @@ https://templatemo.com/tm-559-zay-shop
     <script type="module" src="js/products.js"></script>
     <!-- End Script -->
 </body>
+<script>
+  // Script to open and close sidebar
+  function popen() {
+    document.getElementById("mySidebar").style.display = "block";
+  }
+
+  function pclose() {
+    document.getElementById("mySidebar").style.display = "none";
+  }
+</script>
 
 </html>
