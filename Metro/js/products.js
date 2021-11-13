@@ -32,11 +32,12 @@ async function updateProduct(db, document, newValue) {
 }
 let Product = await getProduct(db)
 const List = document.getElementById("cart-items")
-for(let cart of Product){
-  
-  const newHtml = `<span class="cart-item1 cart-header1 cart-column1">${cart.name}</span>
+for(let cart of Product) {
+  const newHtml = `<div class="cart-row">
+  <span class="cart-item1 cart-header1 cart-column1">${cart.name}</span>
   <span class="cart-item1 cart-header1 cart-column1">${cart.price}$</span>
-  <span class="cart-quantity1 cart-header1 cart-column1"><i class=" optionsicon fa-lg fas fa-edit"></i><i class=" optionsicon fa-lg fas fa-trash-alt"></i></span>`
+  <span class="cart-quantity1 cart-header1 cart-column1"><i class=" optionsicon fa-lg fas fa-edit"></i><i class=" optionsicon fa-lg fas fa-trash-alt"></i></span>
+  </div>`
 List.innerHTML += newHtml
 }
 
