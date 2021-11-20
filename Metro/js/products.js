@@ -34,14 +34,14 @@ let Product = await getProduct(db)
 const List = document.getElementById("cart-items")
 for(let cart of Product){
   
-  const newHtml = `<span class="cart-item1 cart-header1 cart-column1">${cart.name}</span>
+  const newHtml = `<div class="cart-row"><span class="cart-item1 cart-header1 cart-column1">${cart.name}</span>
   <span class="cart-item1 cart-header1 cart-column1">${cart.price}$</span>
-  <span class="cart-quantity1 cart-header1 cart-column1"><a href="./Edit Item.html"><i class=" optionsicon fa-lg fas fa-edit"></i></a><i class=" optionsicon fa-lg fas fa-trash-alt"></i></span>`
+  <span class="cart-quantity1 cart-header1 cart-column1"><a href="./Edit Item.html"><i class=" optionsicon fa-lg fas fa-edit"></i></a><i class=" optionsicon fa-lg fas fa-trash-alt"></i></span></div>`
 List.innerHTML += newHtml
 }
 
 {/* <div class="cart-row">
-  <span class="cart-item cart-header cart-column">${Product.name}</span>
-  <span class="cart-item cart-header cart-column">${Product.price}</span>
-  <span class="cart-quantity cart-header cart-column">OPTIONS</span>
+  <span class="cart-item1 cart-header1 cart-column1">${Product.name}</span>
+  <span class="cart-item1 cart-header1 cart-column1">${Product.price}</span>
+  <span class="cart-quantity1 cart-header1 cart-column1">OPTIONS</span>
 </div> */}

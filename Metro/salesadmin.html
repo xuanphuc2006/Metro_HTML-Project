@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/navbar.css">
 <!--
     
 TemplateMo 559 Zay Shop
@@ -26,11 +27,18 @@ https://templatemo.com/tm-559-zay-shop
 </head>
 
 <body>
-    
-    <!-- idk  -->
 
-    <div style="padding-top: 150px;"></div>
-    <section style=" width: 100%; text-align:center; " class="container content-section">
+    <div class="navcontent" id="mySidebar">
+      <span><a href="./adminpage.html"  class=" navbutton"><h5>Administrative Page</h5></a></span>
+      <span><a href="./productadmin.html"  class=" navbutton"><h5>Manage Item</h5></a></span>
+      <span><a href="./uploaditems.html"  class=" navbutton"><h5>Upload Items</h5></a></span>
+      <span><a href="./salesadmin.html"  class="navbutton"> <h5>Sales</h5></a></span>
+      <span><a href="./index.html"  class="navbutton"> <h5>User Perspective</h5></a></span>
+  
+    </div>
+  
+      <div style="padding-top: 100px;"></div>
+    <section style=" width: 100%; text-align:center; " class=" main container content-section">
         <h2 style=" width: 100%; text-align:center; " class="section-header">SALES ADMIN </h2>
         <div class="cart-row">
             <span class="cart-price cart-header cart-column">ID</span>
@@ -41,7 +49,7 @@ https://templatemo.com/tm-559-zay-shop
         </div>
         <div id="cart-items"></div>
         <div class="cart-total">
-            <strong class="cart-total-title">Total</strong>
+            <strong class="cart-total-title">Total:</strong>
             <span id="cart-total-price"></span>
         </div>
         <div id="cart-items"></div>
