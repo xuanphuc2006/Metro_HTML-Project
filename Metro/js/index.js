@@ -227,7 +227,7 @@ const productsData = [
   {
     id: 34,
     name: 'Root Veggie Burger Patties',
-    price: 5.99,
+    price: 5.59,
     imgUrl: './assets/img/HIL_1000x1000_RootVeggie_12boxes_620x.jpg'
   },
   {
