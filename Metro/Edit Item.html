@@ -15,42 +15,43 @@
    <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/styles.css">
+<!--
+    
+TemplateMo 559 Zay Shop
 
+https://templatemo.com/tm-559-zay-shop
 
-<style>
-  body {
-    font-family: "Lato", sans-serif;
-    min-height: 100%;
-
-  }
-  
-</style>
+-->
 </head>
 
 <body>
+    
+    <!-- idk  -->
 
-  <div class="navcontent" id="mySidebar">
-    <span><a href="./adminpage.html"  class=" navbutton"><h5>Administrative Page</h5></a></span>
-    <span><a href="./productadmin.html"  class=" navbutton"><h5>Manage Item</h5></a></span>
-    <span><a href="./uploaditems.html"  class=" navbutton"><h5>Upload Items</h5></a></span>
-    <span><a href="./salesadmin.html"  class="navbutton"> <h5>Sales</h5></a></span>
-    <span><a href="./index.html"  class="navbutton"> <h5>User Perspective</h5></a></span>
-
-  </div>
-
-    <div style="padding-top: 100px;"></div>
-
-    <section style=" width: 100%; text-align:center; " class=" main container content-section">
+    <div style="padding-top: 150px;"></div>
+    <section style=" width: 100%; text-align:center; " class="container content-section">
         <h2 style=" width: 100%; text-align:center; " class="section-header">PRODUCTS </h2>
         <div class="cart-row">
             <span class="cart-item cart-header cart-column">ITEM NAME</span>
             <span class="cart-item cart-header cart-column">PRICE</span>
             <span class="cart-quantity cart-header cart-column">OPTIONS</span>
         </div>
-        <div id="cart-items"></div>
+        <div class="cart-row1">
+            <span class="cart-item1 cart-header1 cart-column1">  
+                <input placeholder="item name" type="text" id="name" name="name"><br><br>
+            </span>
+            <span class="cart-item1 cart-header1 cart-column1">                
+                <input placeholder="price" type="text" id="price" name="price"><br><br>
+            </span>
+            <span class="cart-quantity1 cart-header1 cart-column1">  
+                <input type="submit" value="Save">
+            </span>
+        </div>
     </section>
+    
+
+
 
     <!-- Start Script -->
     <script src="assets/js/jquery-1.11.0.min.js"></script>
@@ -61,4 +62,5 @@
     <script type="module" src="js/products.js"></script>
     <!-- End Script -->
 </body>
+
 </html>

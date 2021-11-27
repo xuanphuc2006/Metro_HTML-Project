@@ -2,20 +2,43 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Upload Item</title>
+  <title>Your local grocer | Metro </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" href="assets/img/Metro_Inc.-Logo.wine.png">
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/Metro_Inc.-Logo.wine.png">
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/templatemo.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+ <!-- Load fonts style after rendering the layout styles -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="./css/navbar.css">
   <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="./css/signin.css">
+  <link rel="stylesheet" href="./css/navbar.css">
+
 </head>
 
-<body>
-  <div class="row">
+<div class="navcontent" id="mySidebar">
+  <span><a href="./adminpage.html"  class=" navbutton"><h5>Administrative Page</h5></a></span>
+  <span><a href="./productadmin.html"  class=" navbutton"><h5>Manage Item</h5></a></span>
+  <span><a href="./uploaditems.html"  class=" navbutton"><h5>Upload Items</h5></a></span>
+  <span><a href="./salesadmin.html"  class="navbutton"> <h5>Sales</h5></a></span>
+  <span><a href="./index.html"  class="navbutton"> <h5>User Perspective</h5></a></span>
+
+</div>
+
+  <div style="padding-top: 100px;"></div> 
+
+  <div class=" main row">
     <div class="col-md-12">
       <form id="myForm">
-        <h1> Upload Item </h1>
         <fieldset>
+          <h2 style=" line-height:1.5;width: 100%; text-align:center;font-size: 3.5em; " class="section-header">UPLOAD ITEM </h2>
 
           <label for="Name">Name:</label>
           <input class="nomargin" type="text" id="Name" name="Name" required>
