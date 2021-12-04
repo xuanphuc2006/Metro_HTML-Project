@@ -17,7 +17,7 @@ const db = getFirestore();
 let cart = JSON.parse(localStorage.getItem("cart")) || []
 let products = JSON.parse(localStorage.getItem("products")) || []
 
-function displaySuccessMessage(title){
+function displaySuccessMessage(title) {
   Swal.fire({
     title,
     icon: 'success',
@@ -27,17 +27,27 @@ function displaySuccessMessage(title){
 function deleteItem() {
   displaySuccessMessage('Thank you for your purchase')
   localStorage.removeItem("cart");
-  window.setTimeout(function(){location.reload()},2500)
+  window.setTimeout(function () { location.reload() }, 2500)
 }
+const currentUser = JSON.parse(localStorage.getItem('currentUser'))
 
 export async function uploadCart() {
   try {
+    let total_price = 0
+    for (let order of cart) {
+      const item = products.find(product => product.id == order.itemId)
+      
+      total_price += (order.quantity * item.price)
+    }
+    
     let bill = {
+      total: total_price,
+      created_at: Date.now(),
       user_email: currentUser.email
     }
     const docRef = await addDoc(collection(db, "bills"), bill);
     console.log("Document written with ID: ", docRef.id);
-    for (let item of cart){
+    for (let item of cart) {
       item["bill_id"] = docRef.id;
       const docRefChild = await addDoc(collection(db, "bill_items"), item)
     }
@@ -47,24 +57,23 @@ export async function uploadCart() {
   }
 }
 
-const currentUser = JSON.parse(localStorage.getItem('currentUser'))
 
 const signOutElement = document.getElementById('signout-link')
 
 
-if(currentUser){
+if (currentUser) {
   const signInElement = document.getElementById('signin-link')
   signInElement.hidden = true
-  
+
   document.querySelector('.hello-text').textContent = `Welcome, ${currentUser.name}`
 
   signOutElement.onclick = () => {
     localStorage.removeItem('currentUser')
-    signInElement.hidden = false 
+    signInElement.hidden = false
     signOutElement.hidden = true
     document.querySelector('.hello-text').textContent = ''
   }
-}else{
+} else {
   signOutElement.hidden = true
 }
 
@@ -73,7 +82,7 @@ const ordersList = document.getElementById("cart-items")
 
 let totalPrice = 0
 
-for(let order of cart){
+for (let order of cart) {
   const item = products.find(product => product.id == order.itemId)
   const newHtml = `<div style="display: flex;">
     <div class="cart-item">${item.name}</div>
