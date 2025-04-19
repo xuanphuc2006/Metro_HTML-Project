@@ -52,6 +52,6 @@ $(document).ready(function() {
       $(this).addClass('btn-secondary');
       return false;
     });
-    // End roduct detail
+    // End product detail
 
 });
